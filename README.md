@@ -1,2 +1,0 @@
-# regressions
-regressions exercises 

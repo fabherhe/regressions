@@ -54,8 +54,6 @@ df.index
 
 df = df.rename(columns={"index": "Year", "World": "GDP (current US$)"})
 
-df.head(5)
-
 #revisamos que los datos esten listos para correr la regresion
 df.info()
 
