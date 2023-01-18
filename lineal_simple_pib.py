@@ -14,17 +14,13 @@ gdp.info()
 # Select rows where the "Country Name" column contains "World"
 world = gdp.loc[gdp["Country Name"].str.contains("World")]
 
-#print the variable to see the content
-world.head()
-
 #borramos primera fila mundo arabe
 world = world.drop(world.index[0])
 
-world.head()
 
 # Display the rows of the DataFrame with their indices
 world.reset_index(inplace=True)
-world.head()
+
 
 world = world.rename(columns={"Country Name": "Index"})
 
@@ -36,7 +32,6 @@ world.head()
 
 # transpose
 wt = world.transpose()
-wt.head()
 
 # Eliminar el encabezado del dataframe
 header = wt.iloc[0]
@@ -44,11 +39,7 @@ df = wt[1:]
 # Asignar la primera fila como encabezado
 df.columns = header
 
-df.head(5)
-
 df.reset_index(inplace=True)
-
-df.head()
 
 df.index
 
