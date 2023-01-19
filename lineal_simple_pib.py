@@ -1,14 +1,13 @@
 #don't forget upload the csv
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
 from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import mean_absolute_error
 
 gdp = pd.read_csv("gdp_data.csv", header=2)
-
+    
 gdp.info()
 
 # Select rows where the "Country Name" column contains "World"
@@ -67,8 +66,7 @@ df_temp = df_temp.apply(pd.to_numeric, downcast='integer')
 # sobreescribe las columnas originales con los datos convertidos
 df[["Year", "GDP (current US$)"]] = df_temp
 
-df.info()
-
+#dos visualizaciones a ver que pedo con los datos
 plt.plot(df["Year"], df["GDP (current US$)"])
 plt.xlabel("Year")
 plt.ylabel("GDP (current US$)")
